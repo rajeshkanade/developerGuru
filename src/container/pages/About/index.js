@@ -7,6 +7,7 @@ import Card from '../../../component/Card';
 const About = () =>{
 
     const[userDetails,setUserDetails]=useState();
+    console.log('userDetails@@##1234',userDetails);
     const Users_Details=[
         {'name':'Sanket kumar','Mob':888888888,'Email':'Sanket@gmail.com'},
         {'name':'Nagesh kumar','Mob':888844545,'Email':'Sanket@gmail.com'},
