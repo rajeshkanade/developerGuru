@@ -5,7 +5,7 @@ const MiddleCompo = (props) => {
  
   return (
     <>
-        <div className={`${styles.container} `}>
+        <div className={styles.container}>
             <p>This is the {props.compoName} Section</p>
         </div> 
     </>
