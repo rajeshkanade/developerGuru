@@ -15,6 +15,7 @@ const Header = () => {
                 <li><NavLink to="/Services" >Services</NavLink></li>
                 <li><NavLink to="/ContactUs" >Contact Us</NavLink></li>
                 <li><NavLink to="/Portfolio" >Portfolio</NavLink></li>
+                <li><NavLink to="/Blog" >Blog</NavLink></li>
                 <button className='btn'>Log In</button>
             </ul>
         </header> 
