@@ -7,6 +7,8 @@ import Portfolio from '../Portfolio';
 import {Routes, Route} from 'react-router-dom';
 import Blog from '../Blog';
 import StudentFullDetails from '../StudentFullDetails';
+import Navigate from '../Navigate';
+import Student_details from '../../../component/Student_details';
 
 const Router = () => {
   return (
@@ -17,6 +19,8 @@ const Router = () => {
       <Route path="/ContactUs" element={<ContactUs/>}/>
       <Route path="/Portfolio" element={<Portfolio/>}/>
       <Route path="/Blog" element={<Blog/>}/>
+      <Route path='/Navigate' element={<Navigate/>}/>
+      <Route path="/Student_details" element={<Student_details/>}/>
       <Route path='/StudentFullDetails/:id' element={<StudentFullDetails/>}></Route>
 
     </Routes>

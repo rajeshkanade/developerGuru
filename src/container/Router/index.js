@@ -6,6 +6,7 @@ import ContactUs from '../ContactUs';
 import Portfolio from '../Portfolio';
 import {Routes, Route} from 'react-router-dom';
 import StudentFullDetails from '../pages/StudentFullDetails';
+// import Navigate from '../Navigate';
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
       <Route path="/Services" element={<Services/>}/>
       <Route path="/ContactUs" element={<ContactUs/>}/>
       <Route path="/Portfolio" element={<Portfolio/>}/>
+      {/* <Route path="/Navigate" element={<Navigate/>} */}
       <Route path='/StudentFullDetails' element={<StudentFullDetails/>}></Route>
     </Routes>
   )

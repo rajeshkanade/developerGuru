@@ -1,29 +1,35 @@
-import react, { useEffect, useState } from "react";
-import Header from "../../../component/Header";
-import MiddleCompo from "../../../component/MiddleCompo";
-import Footer from "../../../component/Footer";
-import styles from "./Portfolio.module.scss";
-import { studentDetails } from "../../../constant";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import Header from '../../../component/Header'
+import styles from './Navigate.module.scss'
+import Footer from '../../../component/Footer'
+import { studentDetails } from '../../../constant'
+import { useNavigate } from 'react-router-dom'
+const Navigate = () => {
+    const [student , setStudent] = useState([]);
+    const Navigate = useNavigate();
 
-const Portfolio = () => {
-  const [student, setStudent] = useState([]);
-  const navigate = useNavigate();
-  console.log(student);
+    useEffect(() => {
+     setStudent(studentDetails)
+    }, [])
+    
+    const sendStudentDetails = (id) =>{
+        const filteredStudent = student.filter((item,index)=>{
+            return item.id === id;
+        })
+        Navigate('/Student_details')
+        localStorage.setItem('student_details' , JSON.stringify(filteredStudent))
 
-  useEffect(() => {
-    setStudent(studentDetails);
-  }, []);
 
+
+    }
   return (
     <>
-      <Header />
-      {/* <MiddleCompo compoName="Portfolio"/> */}
+      <Header/>
       <div className={styles.main}>
-        {student.map((item) => {
+          <div className="row py-3">
+      {student.map((item) => {
           return (
             <>
-              <div className="row py-3">
                 <div className="col-md-3 m-auto ">
                   <div className="card">
                     <div className="card-body text-center">
@@ -39,7 +45,7 @@ const Portfolio = () => {
                       <button
                         className="btn btn-danger"
                         onClick={() => {
-                          navigate(`/StudentFullDetails/${item.id}`);
+                            sendStudentDetails(item.id)
                         }}
                       >
                         More Details
@@ -47,14 +53,14 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </div>
-              </div>
             </>
           );
         })}
+        </div>
       </div>
-      <Footer />
+      <Footer/>
     </>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Navigate
