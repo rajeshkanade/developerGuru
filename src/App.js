@@ -13,11 +13,7 @@ function App() {
   return (
    <>
     <Routers/>
-    {/* <Home/> */}
-    {/* <About/> */}
-    {/* <Services/> */}
-    {/* <ContactUs/> */}
-    {/* <Portfolio/> */}
+
    </>
   );
 }
