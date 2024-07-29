@@ -9,6 +9,7 @@ import Blog from '../Blog';
 import StudentFullDetails from '../StudentFullDetails';
 import Navigate from '../Navigate';
 import Student_details from '../../../component/Student_details';
+import ApiCalling from '../ApiCalling';
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
       <Route path='/Navigate' element={<Navigate/>}/>
       <Route path="/Student_details" element={<Student_details/>}/>
       <Route path='/StudentFullDetails/:id' element={<StudentFullDetails/>}></Route>
+      <Route path='/ApiCalling' element={<ApiCalling/>}></Route>
 
     </Routes>
   )
