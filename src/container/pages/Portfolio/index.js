@@ -5,6 +5,7 @@ import Footer from "../../../component/Footer";
 import styles from "./Portfolio.module.scss";
 import { studentDetails } from "../../../constant";
 import { useNavigate } from "react-router-dom";
+import { sendStudentDetails } from "../../../Helper";
 
 const Portfolio = () => {
   const [student, setStudent] = useState([]);
@@ -44,6 +45,9 @@ const Portfolio = () => {
                       >
                         More Details
                       </button>
+                      {/* <button className="btn btn-danger" onClick={()=>{ sendStudentDetails('studentFullDetails',[item],'/StudenFullDetails',navigate)
+
+                      }}>Submit</button> */}
                     </div>
                   </div>
                 </div>

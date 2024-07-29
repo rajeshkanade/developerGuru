@@ -4,24 +4,25 @@ import styles from './Navigate.module.scss'
 import Footer from '../../../component/Footer'
 import { studentDetails } from '../../../constant'
 import { useNavigate } from 'react-router-dom'
+import { sendStudentDetails } from '../../../Helper'
 const Navigate = () => {
     const [student , setStudent] = useState([]);
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
      setStudent(studentDetails)
     }, [])
     
-    const sendStudentDetails = (id) =>{
-        const filteredStudent = student.filter((item,index)=>{
-            return item.id === id;
-        })
-        Navigate('/Student_details')
-        localStorage.setItem('student_details' , JSON.stringify(filteredStudent))
+    // const sendStudentDetails = (id) =>{
+    //     const filteredStudent = student.filter((item,index)=>{
+    //         return item.id === id;
+    //     })
+    //     navigate('/Student_details')
+    //   localStorage.setItem('student_details' , JSON.stringify(filteredStudent))
+  
 
 
-
-    }
+    // }
   return (
     <>
       <Header/>
@@ -42,10 +43,16 @@ const Navigate = () => {
                       <p>
                         Class : <span>{item.class}</span>
                       </p>
-                      <button
+                      {/* <button
                         className="btn btn-danger"
                         onClick={() => {
                             sendStudentDetails(item.id)
+                        }}
+                      > */}
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                            sendStudentDetails('student_details',[item],'/Student_details',navigate);
                         }}
                       >
                         More Details

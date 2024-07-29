@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { studentDetails } from "../../../constant";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom"; 
 
 
 const StudentFullDetails = () => {
-    const {id} = useParams();
+    // const {id} = useParams();
     const [student, setStudent] = useState([])
     const [filterData, setFilterData] = useState([])
     useEffect(() => {
-     setStudent(studentDetails)
-     setFilterData(student.filter((item)=>{
-        return item.id === parseInt(id)
-     }))
+    //  setStudent(studentDetails)
+    //  setFilterData(student.filter((item)=>{
+    //     return item.id === parseInt(id)
+    //  }))
+
+    localStorage.getItem()
     }, [student])
     
   return (
